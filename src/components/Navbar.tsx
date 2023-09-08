@@ -9,14 +9,14 @@ const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const [theme, setTheme] = React.useState('night');
+  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'light');
 
   // initially set the theme and "listen" for changes to apply them to the HTML tag
   // useEffect(() => {
    
   // }, [theme]);
 
-  console.log(document.querySelector('html'))
+
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -32,12 +32,12 @@ const Navbar = () => {
 
   const handleMode = ()=>{
     setTheme(theme === 'night' ? 'light' : 'night');
+    localStorage.setItem('theme',theme)
     document.querySelector('html')?.setAttribute('data-theme', theme)
   }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
