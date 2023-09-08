@@ -1,10 +1,11 @@
 import React from "react";
 
-const GraphicIcon = () => {
+const GraphicIcon = (props) => {
+  const {height,width} = props ;
   return (
     <svg
-      width="54"
-      height="54"
+    width={`${width}`}
+    height={`${height}`}
       viewBox="0 0 54 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
