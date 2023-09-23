@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
 import Reviews from "../components/Reviews";
+import DevTools from "../components/DevTools";
 
 const Home = () => {
   const text = "Full Stack Web Developer & UI/UX Designer";
@@ -78,6 +79,7 @@ const Home = () => {
 
 
       <Services/>
+      <DevTools />
       <Projects/>
       <Reviews/>
 
